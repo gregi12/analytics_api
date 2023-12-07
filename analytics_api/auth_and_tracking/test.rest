@@ -1,0 +1,12 @@
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{"username":"test76@o2.pl","url":"https://test1234driven.io/blog/django-custom-user-model/"}
+
+###
+
+POST http://127.0.0.1:8000/site_info/
+Content-Type: application/json
+Authentication: 2b0ecc3e3456944cba839180fa28f9a5fa1b2112
+
+{"url":"https://test1234driven.io/blog/django-custom-user-model/","ip_address":"8.8.8.8","http_header":"siemanskd23","user_agent_header":"alalalala","window_width":23,"window_height":25,"max_touch_points":32,"language":"polski"}
