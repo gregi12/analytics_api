@@ -25,8 +25,19 @@ SECRET_KEY = "django-insecure-*2$%@_g-pq3-0vb2ga!tediu*fc%fz@8$!3t*^#0ew3p9*#%-7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#MY addings
+
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'auth_and_tracking.EmailUser'
+
+# set the celery broker url 
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+
+# set the celery result backend 
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+# set the celery timezone 
+CELERY_TIMEZONE = 'UTC'
 
 # Application definition
 
@@ -40,7 +51,28 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "rest_framework",
     "auth_and_tracking",
+    "celery",
+    "django_celery_results",
+    "django_celery_beat",
 ]
+# CELERY SETTINGS
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    }
+}
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
