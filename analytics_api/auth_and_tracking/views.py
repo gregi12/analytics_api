@@ -24,15 +24,5 @@ def signup(request):
             return Response({'error': 'User does not exist'}, status=status.HTTP_400_BAD_REQUEST)
     return Response(serializer.errors, status=status.HTTP_200_OK)
 
-@authentication_classes([SessionAuthentication, TokenAuthentication])
-@permission_classes([IsAuthenticated])
-@api_view(['POST'])
-def site_info(request):
-    try:
-        if User.objects.get(url=request.data['url']):
-            serializer = SiteInfoSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    except ObjectDoesNotExist:
-        return Response({'error': 'User does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+

@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from auth_and_tracking.views import signup, site_info
+from auth_and_tracking.views import signup
+from auth_and_tracking.tasks import site_info
 urlpatterns = [
     path("admin/", admin.site.urls),
     re_path('signup/', signup , name='signup'),
