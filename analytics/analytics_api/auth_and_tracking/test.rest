@@ -1,0 +1,35 @@
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{"username":"test223223@o2.pl","url":"https://siemawitam.pl/"}
+
+###
+
+POST http://127.0.0.1:8000/site_info/
+Content-Type: application/json
+Authentication: 4be64132bd082950d59b917bf579b0e610bf4208
+
+{"url":"https://siemawitam.pl/","ip_address":"8.8.8.8","http_header":"siemanskd23","user_agent_header":"alalalala","window_width":23,"window_height":25,"max_touch_points":12,"language":"niemiecki"}
+
+###
+
+GET http://127.0.0.1:8000/basic_info/
+Content-Type: application/json
+Authentication: 57022b1b80a879ad34895f9860d517bca1212ae7
+
+{"start_date":"2023-12-10","end_date":"2023-12-12"}
+
+###
+
+GET http://127.0.0.1:8000/top_pages/
+Content-Type: application/json
+
+
+{"start_date":"2023-12-10","end_date":"2023-12-13","returned_pages":2}
+
+###
+
+GET http://127.0.0.1:8000/languages/
+Content-Type: application/json
+
+{"start_date":"2023-12-10","end_date":"2023-12-13","returned_languages":0}
