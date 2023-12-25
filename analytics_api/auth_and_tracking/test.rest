@@ -1,0 +1,71 @@
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{"username":"test1222422@o2.pl","url":"https://omg2.pl/"}
+
+###
+
+POST http://127.0.0.1:8000/site_info/
+Content-Type: application/json
+Authorization: Token 8ffd78e0e5d5de790f1c9c93122604d77456bc88
+
+{"url":"https://omg2.pl/","ip_address":"8.8.8.8","http_header":"https://siemanko1212.pl/siemasz/","user_agent_header":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","window_width":23,"window_height":25,"max_touch_points":12,"language":"portugalski"}
+
+###
+
+GET http://127.0.0.1:8000/basic_info/
+Content-Type: application/json
+Authorization: Token aba2aa6e76058e7c880f6c50c80d502577e50956
+
+
+{"start_date":"2023-10-10","end_date":"2023-12-23"}
+
+###
+
+GET http://127.0.0.1:8000/top_pages/
+Content-Type: application/json
+Authorization: Token d53e3ed77eaf3bca803f17f0d52abf5a64053ae6
+
+
+{"start_date":"2023-10-10","end_date":"2023-12-23","returned_pages":3}
+
+###
+
+GET http://127.0.0.1:8000/languages/
+Content-Type: application/json
+Authorization: Token d53e3ed77eaf3bca803f17f0d52abf5a64053ae6
+
+
+{"start_date":"2023-12-19","end_date":"2023-12-23","returned_languages":3}
+
+###
+
+GET http://127.0.0.1:8000/entry_pages/
+Content-Type: application/json
+Authorization: Token d53e3ed77eaf3bca803f17f0d52abf5a64053ae6
+
+{"start_date":"2023-12-18","end_date":"2023-12-23","returned_pages":4}
+
+###
+
+GET http://127.0.0.1:8000/browsers/
+Content-Type: application/json
+Authorization: Token d53e3ed77eaf3bca803f17f0d52abf5a64053ae6
+
+
+{"start_date":"2023-12-18","end_date":"2023-12-23","returned_browsers":1}
+
+###
+
+POST http://127.0.0.1:8000/delete_account/
+Content-Type: application/json
+Authorization: Token d53e3ed77eaf3bca803f17f0d52abf5a64053ae6
+
+
+{"bool":"yes"}
+
+###
+
+GET http://127.0.0.1:8000/active_users/
+Content-Type: application/json
+Authorization: Token 58d9eada40916b42da2d83c0cc711cf199c0cd81
